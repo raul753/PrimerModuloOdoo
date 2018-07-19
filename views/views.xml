@@ -1,0 +1,161 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="productos2.list_pedido">
+      <field name="name">lista de productos</field>
+      <field name="model">productos2.pedido</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha"/>
+          <field name="foto_pedido" widget="image" width="100px" height="100px"/>
+          <field name="tipo"/>
+          <field name="email"/>
+          <field name="telefono"/>
+          <field name="localizacion"/>
+          <field name="productito"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="productos2.list_localizacion">
+      <field name="name">localizacion</field>
+      <field name="model">productos2.localizacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="cod_postal"/>
+          <field name="localizacion_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="productos2.list_ismapersonal">
+      <field name="name">Listado del personal</field>
+      <field name="model">productos2.ismapersonal</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="foto_empleado" widget="image" width="100px" height="100px"/>
+          <field name="fecha_contratacion"/>
+          <field name="telefono"/>
+          <field name="dni"/>
+          <field name="email"/>
+          <field name="sexo"/>
+          <field name="asistio"/>
+          <field name="emple"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="productos2.list_asistencia">
+      <field name="name">asistencia</field>
+      <field name="model">productos2.asistencia</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="cantidad"/>
+          <field name="asistencia_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="productos2.list_ventas">
+      <field name="name">Listado de ventas</field>
+      <field name="model">productos2.ventas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha_venta"/>
+          <field name="producto"/>
+          <field name="empleado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="productos2.list_producto">
+      <field name="name">producto</field>
+      <field name="model">productos2.producto</field>
+      <field name="arch" type="xml">
+        <graph string="Productos">
+          <field name="name" type="row"/>
+          <field name="cantidad" type="row"/>
+        </graph>
+      </field>
+    </record>
+
+    <!-- actions opening views on models  -->
+
+    <record model="ir.actions.act_window" id="productos2.action_window_pedido">
+      <field name="name">Ventana de productos</field>
+      <field name="res_model">productos2.pedido</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="productos2.action_window_localizacion">
+      <field name="name">Ventana del localizacion</field>
+      <field name="res_model">productos2.localizacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="productos2.action_window_ismapersonal">
+      <field name="name">Ventana del personal</field>
+      <field name="res_model">productos2.ismapersonal</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="productos2.action_window_asistencia">
+      <field name="name">Ventana de las asistencias</field>
+      <field name="res_model">productos2.asistencia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="productos2.action_window_ventas">
+      <field name="name">Ventana de las ventas</field>
+      <field name="res_model">productos2.ventas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="productos2.action_window_producto">
+      <field name="name">Ventana de los producto</field>
+      <field name="res_model">productos2.producto</field>
+      <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="productos2" id="productos2.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="localizacion y productos" id="productos2.menu_pedido" parent="productos2.menu_root"/>
+
+    <menuitem name="personal y asistencia" id="productos2.menu_ismapersonal" parent="productos2.menu_root"/>
+
+    <menuitem name="ventas y producto" id="productos2.menu_ventas" parent="productos2.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Lista de pedido" id="productos2.menu_listado_pedido" parent="productos2.menu_pedido"
+      action="productos2.action_window_pedido"/>
+
+    <menuitem name="Lista de localizacion" id="productos2.menu_listado_localizacion" parent="productos2.menu_pedido"
+      action="productos2.action_window_localizacion"/>
+
+    <menuitem name="Lista del personal" id="productos2.menu_listado_ismapersonal" parent="productos2.menu_ismapersonal"
+      action="productos2.action_window_ismapersonal"/>
+
+    <menuitem name="Lista de asistencia" id="productos2.menu_listado_asistencia" parent="productos2.menu_ismapersonal"
+      action="productos2.action_window_asistencia"/>
+
+    <menuitem name="Lista de ventas" id="productos2.menu_listado_ventas" parent="productos2.menu_ventas"
+      action="productos2.action_window_ventas"/>
+
+    <menuitem name="Lista de producto" id="productos2.menu_listado_producto" parent="productos2.menu_ventas"
+      action="productos2.action_window_producto"/>
+
+  </data>
+</odoo>
