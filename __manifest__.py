@@ -9,7 +9,7 @@
         Módulo simple que relaciona los productos que se vende el personal y las ventas que se hace de cada producto.
     """,
 
-    'author': "Jonathan, Ismael y Raúl",
+    'author': "Raúl",
     'website': "http://www.PizzaASIR.com",
 
     # Categories can be used to filter modules in modules listing

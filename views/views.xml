@@ -32,9 +32,9 @@
     </record>
 
 
-    <record model="ir.ui.view" id="productos2.list_ismapersonal">
+    <record model="ir.ui.view" id="productos2.list_personal">
       <field name="name">Listado del personal</field>
-      <field name="model">productos2.ismapersonal</field>
+      <field name="model">productos2.personal</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -101,9 +101,9 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="productos2.action_window_ismapersonal">
+    <record model="ir.actions.act_window" id="productos2.action_window_personal">
       <field name="name">Ventana del personal</field>
-      <field name="res_model">productos2.ismapersonal</field>
+      <field name="res_model">productos2.personal</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -133,7 +133,7 @@
 
     <menuitem name="localizacion y productos" id="productos2.menu_pedido" parent="productos2.menu_root"/>
 
-    <menuitem name="personal y asistencia" id="productos2.menu_ismapersonal" parent="productos2.menu_root"/>
+    <menuitem name="personal y asistencia" id="productos2.menu_personal" parent="productos2.menu_root"/>
 
     <menuitem name="ventas y producto" id="productos2.menu_ventas" parent="productos2.menu_root"/>
 
@@ -145,10 +145,10 @@
     <menuitem name="Lista de localizacion" id="productos2.menu_listado_localizacion" parent="productos2.menu_pedido"
       action="productos2.action_window_localizacion"/>
 
-    <menuitem name="Lista del personal" id="productos2.menu_listado_ismapersonal" parent="productos2.menu_ismapersonal"
-      action="productos2.action_window_ismapersonal"/>
+    <menuitem name="Lista del personal" id="productos2.menu_listado_personal" parent="productos2.menu_personal"
+      action="productos2.action_window_personal"/>
 
-    <menuitem name="Lista de asistencia" id="productos2.menu_listado_asistencia" parent="productos2.menu_ismapersonal"
+    <menuitem name="Lista de asistencia" id="productos2.menu_listado_asistencia" parent="productos2.menu_personal"
       action="productos2.action_window_asistencia"/>
 
     <menuitem name="Lista de ventas" id="productos2.menu_listado_ventas" parent="productos2.menu_ventas"

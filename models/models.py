@@ -21,8 +21,8 @@ class localizacion(models.Model):
     cod_postal = fields.Integer(string="codigo postal", size=5)
     localizacion_id = fields.One2many('productos2.pedido', 'localizacion', string="localizacion")
 
-class ismapersonal(models.Model):
-    _name = 'productos2.ismapersonal'
+class personal(models.Model):
+    _name = 'productos2.personal'
 
     name = fields.Char(string="Nombre del empleado")
     foto_empleado = fields.Binary(string="Foto")
@@ -39,7 +39,7 @@ class asistencia(models.Model):
 
     name = fields.Char(string="asistencia del empleado")
     cantidad = fields.Integer(string="horas trabajadas")
-    asistencia_id = fields.One2many('productos2.ismapersonal', 'asistio', string="asistencia")
+    asistencia_id = fields.One2many('productos2.personal', 'asistio', string="asistencia")
 
 class ventas(models.Model):
     _name = 'productos2.ventas'
@@ -47,7 +47,7 @@ class ventas(models.Model):
     name = fields.Char(string="Nombre del cliente")
     fecha_venta = fields.Date(string="Fecha de venta")
     producto = fields.Many2one('productos2.producto', string="producto")
-    empleado = fields.Many2one('productos2.ismapersonal', string="empleado que lo vendio")
+    empleado = fields.Many2one('productos2.personal', string="empleado que lo vendio")
 
 class producto(models.Model):
     _name = 'productos2.producto'
